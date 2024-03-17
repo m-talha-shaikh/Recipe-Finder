@@ -56,7 +56,7 @@ export default function Form({ fillTheList, setToSearched, setToRandom }) {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://precious-creponne-da48ee.netlify.app/./netlify/functions/searchRecipe', { query: inputValue });
+      const response = await axios.post('https://precious-creponne-da48ee.netlify.app/.netlify/functions/searchRecipe', { query: inputValue });
       const recipes = response.data;
 
       if (recipes.length > 0) {
