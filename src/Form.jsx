@@ -56,21 +56,11 @@ export default function Form({ fillTheList, setToSearched, setToRandom }) {
     e.preventDefault();
 
     try {
-      const apiKey = '408d436b50c74df3bf2c7f01db1f6cd6';
-      const baseUrl = 'https://api.spoonacular.com/recipes/complexSearch';
-
-      const response = await axios.get(baseUrl, {
-        params: {
-          apiKey: apiKey,
-          query: inputValue,
-        },
-      });
-
-      const recipes = response.data.results;
+      const response = await axios.post('https://precious-creponne-da48ee.netlify.app/', { query: inputValue });
+      const recipes = response.data;
 
       if (recipes.length > 0) {
         setToSearched();
-        console.log(recipes);
         fillTheList(recipes);
       } else {
         setToRandom();
