@@ -31,7 +31,6 @@ const TopPicks = () => {
               key={index}
               image={item.image}
               title={item.title}
-              description={item.description}
               description={description}
               id={index === 0 ? 'main-pick' : null}
               index={index}
