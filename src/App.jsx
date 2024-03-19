@@ -3,6 +3,11 @@ import Form from './Form'
 import Listing from './Listing'
 import { useState } from 'react'
 
+import TopPicks from './components/TopPicks'
+
+
+
+import './app.css'
 
 export default function App(){
 
@@ -14,7 +19,8 @@ export default function App(){
     <>
 
       <Header />
-
+      <TopPicks />
+      <h2>h</h2>
       <Form 
 
             search={search}
@@ -48,6 +54,8 @@ export default function App(){
               }}
               pickedItem={pickedItem}
                />
+
+
 
     </>
   )
