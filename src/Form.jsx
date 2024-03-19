@@ -34,6 +34,12 @@ const StyledInput = styled.input`
   font-size: 16px;
 `;
 
+const RandomText = styled.span`
+  font-weight: bold;
+  font-size: 24px;
+  color: #333;
+`;
+
 const StyledButton = styled.button`
   width: 100%;
   padding: 10px;
@@ -73,6 +79,7 @@ export default function Form({ fillTheList, setToSearched, setToRandom }) {
   return (
     <FormContainer>
       <StyledForm onSubmit={handleFormSubmit}>
+        <RandomText>Search Recipes in Box</RandomText>
         <StyledInput
           type="text"
           placeholder="Enter Your Query here"

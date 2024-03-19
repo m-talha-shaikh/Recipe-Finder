@@ -6,7 +6,7 @@ const TopPick = ({ image, title, description, id, index }) => {
 		<div className={'top-pick' + ' ' + 'item-' + index} id={id}>
 			<img src={image} alt={title} className='top-pick-image' />
 			<h3 className='top-pick-title'>{title}</h3>
-			<p className='top-pick-description'>{description}</p>
+			<p className='top-pick-description'>{Array.isArray(description) ? description.join(' ') : description}</p>
 		</div>
 	)
 }

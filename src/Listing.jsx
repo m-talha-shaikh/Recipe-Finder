@@ -106,7 +106,7 @@ export default function Listing({
     return (
       <Container>
         <Title>
-          <RandomText>SEARCH RECIPES IN THE BOX</RandomText>
+          <RandomText></RandomText>
         </Title>
       </Container>
     );

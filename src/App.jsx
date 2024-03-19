@@ -19,8 +19,7 @@ export default function App(){
     <>
 
       <Header />
-      <TopPicks />
-      <h2>h</h2>
+      
       <Form 
 
             search={search}
@@ -35,6 +34,8 @@ export default function App(){
             }}
 
             />
+
+      <TopPicks />
 
       <Listing
 
@@ -54,8 +55,6 @@ export default function App(){
               }}
               pickedItem={pickedItem}
                />
-
-
 
     </>
   )
