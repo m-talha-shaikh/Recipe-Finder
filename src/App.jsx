@@ -35,7 +35,7 @@ export default function App(){
 
             />
 
-      <TopPicks />
+      {(search === 'random' || pickedItem === null || list.length === 0) && <TopPicks />}
 
       <Listing
 
