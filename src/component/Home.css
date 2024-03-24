@@ -3,7 +3,7 @@
 }
 
 #home {
-	background-image: url('./cover-large.jpg');
+	background-image: url('cover-large.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
