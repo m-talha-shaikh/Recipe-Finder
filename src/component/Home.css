@@ -1,0 +1,41 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+#home {
+	background-image: url('./cover-large.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#categories {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.category-item {
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	margin: 10px 12%;
+	background-color: white;
+	padding: 5px 0;
+	transition: transform 0.3s ease-in, color 0.4s ease-in,  background-color 0.5s ease-in;
+}
+
+.category-item:hover {
+	transform: scale(1.05);
+	background-color: lightskyblue;
+	color: white;
+}
+
+.category-item img {
+	margin: 3px auto;
+	width: clamp(25px, 3vw, 40px);
+	height: auto;
+}
+
+h3 {
+	font-size: clamp(14px, 1.5vw, 50px);
+	font-weight: 100;
+}

@@ -4,6 +4,7 @@ import Listing from './Listing'
 import { useState } from 'react'
 
 import TopPicks from './components/TopPicks'
+import Home from './component/Home'
 
 
 
@@ -19,7 +20,7 @@ export default function App(){
     <>
 
       <Header />
-      
+      <Home />
       <Form 
 
             search={search}
