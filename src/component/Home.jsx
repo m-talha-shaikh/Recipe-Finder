@@ -2,38 +2,57 @@ import React, { useState , useEffect } from 'react'
 import axios from 'axios'
 import './Home.css'
 
+import Form from './Form'
+import Category from './Category'
+import Header from './Header'
+import Listing from './Listing'
+import TopPicks from './TopPicks'
+
 export default function Home() {
+
+	  const [search, setSearch] = useState("random");
+	  const [list, setList] = useState([]);
+	  const [pickedItem, setPickedItem] = useState(null);
+
 	return (
 		<div id="home">
-			<h1>Yummmyy</h1>
-			<h2>Find a tasty recipe</h2>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-			<div id="categories">
-				<div class="category-item">
-					<img src="/assets/pizza-icon.png" alt="" />
-					<h3>Breakfast</h3>
-				</div>
-				<div class="category-item">
-					<img src="/assets/pizza-icon.png" alt="" />
-					<h3>Lunch</h3>
-				</div>
-				<div class="category-item">
-					<img src="/assets/pizza-icon.png" alt="" />
-					<h3>Dinner</h3>
-				</div>
-				<div class="category-item">
-					<img src="/assets/pizza-icon.png" alt="" />
-					<h3>Party</h3>
-				</div>
-				<div class="category-item">
-					<img src="/assets/pizza-icon.png" alt="" />
-					<h3>Dessert</h3>
-				</div>
-				<div class="category-item">
-					<img src="/assets/pizza-icon.png" alt=""  />
-					<h3>Smoothie</h3>
-				</div>
-			</div>
+			<Header />
+			<Form 
+
+            search={search}
+            setToRandom={(e) => {
+              setSearch("random");
+            }}      
+            setToSearched={() => {
+              setSearch("searched");
+            }}
+            fillTheList={(recipes) => {
+              setList(recipes);
+            }}
+
+            />
+			<Category />
+			{(list.length === 0) && <TopPicks />}
+
+      		<Listing
+
+              list={list}
+              search={search}
+              setToRandom={(e) => {
+                setSearch("random");
+              }} 
+              setToSearched={(e) => {
+                setSearch("searched");
+              }}
+              setToPicked={(e) => {
+                setSearch("picked");
+              }}
+              setToPickedItem={(e) =>{
+                  setPickedItem(e);
+              }}
+              pickedItem={pickedItem}
+               />
 		</div>
 	)
+
 }

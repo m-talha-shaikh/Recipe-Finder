@@ -17,5 +17,11 @@ const StyledHeader = styled.h1`
 `;
 
 export default function Header() {
-  return <StyledHeader>Recipe Finder</StyledHeader>;
+  return (
+    <div id="header">
+      <h1>Yummmyy</h1>
+      <h2>Find a tasty recipe</h2>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+    </div>
+  );
 }
