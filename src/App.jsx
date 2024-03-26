@@ -1,4 +1,4 @@
-import Home from './component/Home'
+import Home from './components/Home'
 
 import './app.css'
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './Form.css'
 
 export default function Form({ fillTheList, setToSearched, setToRandom }) {
   const [inputValue, setInputValue] = useState('');
@@ -24,15 +25,14 @@ export default function Form({ fillTheList, setToSearched, setToRandom }) {
 
   return (
     <div id="form-box">
-      <form id="form-box" onSubmit={handleFormSubmit}>
-        <h2>Search Recipes in Box</h2>
+      <form id="form" onSubmit={handleFormSubmit}>
         <input
           type="text"
-          placeholder="Enter Your Query here"
+          placeholder="Enter your search"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <button type="submit">Search</button>
+        <button type="submit">&#x1F50D;</button>
       </form>
     </div>
   );

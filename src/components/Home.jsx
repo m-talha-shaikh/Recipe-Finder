@@ -15,23 +15,25 @@ export default function Home() {
 	  const [pickedItem, setPickedItem] = useState(null);
 
 	return (
-		<div id="home">
-			<Header />
-			<Form 
+		<div id="home-large">
+			<div id="home">
+         <Header />
+          <Form 
 
-            search={search}
-            setToRandom={(e) => {
-              setSearch("random");
-            }}      
-            setToSearched={() => {
-              setSearch("searched");
-            }}
-            fillTheList={(recipes) => {
-              setList(recipes);
-            }}
+                search={search}
+                setToRandom={(e) => {
+                  setSearch("random");
+                }}      
+                setToSearched={() => {
+                  setSearch("searched");
+                }}
+                fillTheList={(recipes) => {
+                  setList(recipes);
+                }}
 
-            />
-			<Category />
+                />
+          <Category />   
+      </div>
 			{(list.length === 0) && <TopPicks />}
 
       		<Listing

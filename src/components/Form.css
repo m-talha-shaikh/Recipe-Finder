@@ -1,0 +1,27 @@
+#form-box {
+	width: 60%;
+	margin: 2em auto;
+}
+
+#form {
+	height: 4em;
+	width: 80%;
+	margin: 2em auto;
+	display: grid;
+	grid-template-columns: 6fr 1fr;
+	border: 0.5px solid grey;
+	box-shadow: 1px 3px 15px 0px grey;
+}
+
+button {
+	border-left: 0.75px solid grey;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.2s ease-in;
+}
+
+button:hover {
+	background-color: lightskyblue;
+}
