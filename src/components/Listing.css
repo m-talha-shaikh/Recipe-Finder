@@ -1,5 +1,6 @@
 #list-page {
-/*	background-image: linear-gradient(to right, lightskyblue 40%, #819cbd);*/
+	background-image: url('/assets/list-cover-4.jpg');
+	background-size: cover;
 }
 
 #searched-list {

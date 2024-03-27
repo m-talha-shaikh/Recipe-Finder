@@ -1,0 +1,19 @@
+.equipments, .ingredients, .steps {
+	background-image: linear-gradient(to right top, lightskyblue, #1F2833);
+	color: white;
+	font-size: 20px;
+	margin: 20px auto;
+	width: 80vw;
+	border-radius: 10px;
+	box-shadow: 10px 10px 10px 0px lightgrey;
+	padding: 20px auto;
+}
+
+.equipments h3, .ingredients h3 {
+	color: lightskyblue;
+	font-size: 32px;
+}
+
+.recipe-cards {
+	padding: 5px;
+}

@@ -8,7 +8,7 @@ export default function Form({ fillTheList, setToSearched, setToRandom }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiKey = 'ac8e0ffd9e0d46b48c36541a218e7e12';
+        const apiKey = '30f11e2f6a32435585f86aba698be99a';
         const baseUrl = 'https://api.spoonacular.com/recipes/random';
         const response = await axios.get(baseUrl, {
           params: {
