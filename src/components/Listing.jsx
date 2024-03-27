@@ -2,49 +2,7 @@ import React, { useState, Fragment } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import Item from './Item';
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const List = styled.ul`
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-`;
-
-const ListItem = styled.li`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  background-color: #f5f5f5;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-
-  &:hover {
-    background-color: #e9e9e9;
-  }
-
-  img {
-    width: 200px;
-    height: 200px;
-    margin-left: 10px;
-  }
-`;
-
-const Title = styled.h1`
-  margin-bottom: 20px;
-`;
-
-const RandomText = styled.span`
-  font-weight: bold;
-  font-size: 24px;
-  color: #333;
-`;
+import './Listing.css'
 
 export default function Listing({
   list,
@@ -55,6 +13,10 @@ export default function Listing({
   setToSearched,
   setToRandom,
 }) {
+
+  
+
+
   const fillItem = (e) => {
     const clickedItemId = e.currentTarget.getAttribute('data-id');
     populateItem(clickedItemId);
@@ -84,10 +46,11 @@ export default function Listing({
   };
 
   const listItems = list.map((meals) => (
-    <ListItem onClick={fillItem} key={meals.id} data-id={meals.id}>
-      {meals.title}
+    <li className="listed-item" onClick={fillItem} key={meals.id} data-id={meals.id}>
       <img src={meals.image} alt={meals.title} />
-    </ListItem>
+      <p className="title-meal">{meals.title}</p>
+      <p className="read-more" onClick={fillItem} >Read More</p>
+    </li>
   ));
 
   let newItem = [];
@@ -104,23 +67,25 @@ export default function Listing({
 
   if (search === 'random') {
     return (
-      <Container>
-        <Title>
-          <RandomText></RandomText>
-        </Title>
-      </Container>
+      <div>
+        <div>
+          <div></div>
+        </div>
+      </div>
     );
   } else if (search === 'searched') {
     return (
-      <Container>
-        <Title>{listItems}</Title>
-      </Container>
+      <section id="list-page">
+        <div id='searched-list'>
+          <div id='listing-grid'>{listItems}</div>
+        </div>
+      </section>
     );
   } else if (search === 'picked') {
     return (
-      <Container>
-        <Title>{newItem}</Title>
-      </Container>
+      <div>
+        <div>{newItem}</div>
+      </div>
     );
-  }
+div  }
 }

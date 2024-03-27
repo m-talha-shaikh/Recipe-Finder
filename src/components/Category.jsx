@@ -6,27 +6,27 @@ export default function Cateogry() {
 	return (
 		
 			<div id="categories">
-				<div class="category-item">
+				<div className="category-item">
 					<img src="/assets/pizza-icon.png" alt="" />
 					<h3>Breakfast</h3>
 				</div>
-				<div class="category-item">
+				<div className="category-item">
 					<img src="/assets/pizza-icon.png" alt="" />
 					<h3>Lunch</h3>
 				</div>
-				<div class="category-item">
+				<div className="category-item">
 					<img src="/assets/pizza-icon.png" alt="" />
 					<h3>Dinner</h3>
 				</div>
-				<div class="category-item">
+				<div className="category-item">
 					<img src="/assets/pizza-icon.png" alt="" />
 					<h3>Party</h3>
 				</div>
-				<div class="category-item">
+				<div className="category-item">
 					<img src="/assets/pizza-icon.png" alt="" />
 					<h3>Dessert</h3>
 				</div>
-				<div class="category-item">
+				<div className="category-item">
 					<img src="/assets/pizza-icon.png" alt=""  />
 					<h3>Smoothie</h3>
 				</div>

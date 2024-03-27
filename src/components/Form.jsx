@@ -1,9 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Form.css'
 
 export default function Form({ fillTheList, setToSearched, setToRandom }) {
   const [inputValue, setInputValue] = useState('');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://precious-creponne-da48ee.netlify.app/.netlify/functions/topRecipes');
+        setToSearched();
+        fillTheList(response.data);
+        console.log(response.data)
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();

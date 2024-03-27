@@ -34,7 +34,7 @@ export default function Home() {
                 />
           <Category />   
       </div>
-			{(list.length === 0) && <TopPicks />}
+{/*			{(list.length === 0) && <TopPicks />}*/}
 
       		<Listing
 
