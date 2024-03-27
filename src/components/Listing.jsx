@@ -14,8 +14,6 @@ export default function Listing({
   setToRandom,
 }) {
 
-  
-
 
 const fillItem = (e) => {
   const clickedItemId = e.currentTarget.getAttribute('data-id');
@@ -65,7 +63,7 @@ const fillItem = (e) => {
     itemArray.push(pickedItem);
     newItem = itemArray.map((item) => (
       <Fragment key={item.id}>
-        <Item data={item[0].steps} title={item[1]} image={item[2]} />
+        <Item data={item[0].steps} title={item[1]} image={item[2]} onBackClick={() => setToSearched()} />
       </Fragment>
     ));
   }

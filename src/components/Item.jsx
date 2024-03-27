@@ -1,8 +1,9 @@
 import React from 'react';
 
-const Item = ({ data, title, image }) => {
+const Item = ({ data, title, image, onBackClick }) => {
   return (
     <div>
+      <button style={{ color: 'white', backgroundColor: 'lightskyblue', margin: '10px auto', padding: '10px', fontSize: '30px', borderRadius: '5px' }} onClick={onBackClick}>Go Back</button>
       <h2>{title}</h2>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} id="image-item">
         <img src={image} alt={title} style={{ display: 'inline-block' , width: '40vw' , height: 'auto'}} />

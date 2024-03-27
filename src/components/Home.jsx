@@ -32,7 +32,27 @@ export default function Home() {
                 }}
 
                 />
-          <Category />   
+         <Category
+    list={list}
+    search={search}
+    setToRandom={(e) => {
+        setSearch("random");
+    }} 
+    setToSearched={() => {
+                  setSearch("searched");
+                }}
+    setToPicked={(e) => {
+        setSearch("picked");
+    }}
+    setToPickedItem={(e) =>{
+        setPickedItem(e);
+    }}
+    pickedItem={pickedItem}
+    fillTheList={(recipes) => {
+                  setList(recipes);
+                }}
+/>
+
       </div>
 {/*			{(list.length === 0) && <TopPicks />}*/}
 
