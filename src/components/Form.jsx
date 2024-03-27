@@ -8,9 +8,18 @@ export default function Form({ fillTheList, setToSearched, setToRandom }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://precious-creponne-da48ee.netlify.app/.netlify/functions/topRecipes');
+        const apiKey = 'ac8e0ffd9e0d46b48c36541a218e7e12';
+        const baseUrl = 'https://api.spoonacular.com/recipes/random';
+        const response = await axios.get(baseUrl, {
+          params: {
+            apiKey: apiKey,
+            number: 10,
+          },
+        });
+
+        // const response = await axios.get('https://precious-creponne-da48ee.netlify.app/.netlify/functions/topRecipes');
         setToSearched();
-        fillTheList(response.data);
+        fillTheList(response.data.recipes);
         console.log(response.data)
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -24,8 +33,19 @@ export default function Form({ fillTheList, setToSearched, setToRandom }) {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://precious-creponne-da48ee.netlify.app/.netlify/functions/searchRecipe', { query: inputValue });
-      const recipes = response.data;
+          const apiKey = 'ac8e0ffd9e0d46b48c36541a218e7e12'
+          const baseUrl = 'https://api.spoonacular.com/recipes/complexSearch';
+          const response = await axios.get(baseUrl, {
+            params: {
+              apiKey: apiKey,
+              query: inputValue,
+            },
+          });
+
+          // Extract recipe data from the response
+          const recipes = response.data.results;
+      // const response = await axios.post('https://precious-creponne-da48ee.netlify.app/.netlify/functions/searchRecipe', { query: inputValue });
+      // const recipes = response.data;
 
       if (recipes.length > 0) {
         setToSearched();

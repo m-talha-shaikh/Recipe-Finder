@@ -17,18 +17,21 @@ export default function Listing({
   
 
 
-  const fillItem = (e) => {
-    const clickedItemId = e.currentTarget.getAttribute('data-id');
-    populateItem(clickedItemId);
-  };
+const fillItem = (e) => {
+  const clickedItemId = e.currentTarget.getAttribute('data-id');
+  const clickedItemTitle = e.currentTarget.querySelector('.title-meal').textContent;
+  const clickedItemImage = e.currentTarget.querySelector('img').getAttribute('src');
+  populateItem(clickedItemId, clickedItemTitle, clickedItemImage);
+};
 
-  const populateItem = async (id) => {
+
+  const populateItem = async (id, title, image) => {
     try {
-      const apiKey = '408d436b50c74df3bf2c7f01db1f6cd6';
+      const apiKey = 'ac8e0ffd9e0d46b48c36541a218e7e12';
       const baseUrl =
         'https://api.spoonacular.com/recipes/' +
         id +
-        '/information?includeNutrition=false';
+        '/analyzedInstructions';
 
       const response = await axios.get(baseUrl, {
         params: {
@@ -36,7 +39,9 @@ export default function Listing({
         },
       });
 
-      const recipe = response.data;
+      let recipe = response.data;
+      recipe[1] = title;
+      recipe[2] = image
       setToPickedItem(recipe);
       console.log(recipe);
       setToPicked();
@@ -60,7 +65,7 @@ export default function Listing({
     itemArray.push(pickedItem);
     newItem = itemArray.map((item) => (
       <Fragment key={item.id}>
-        <Item props={item} />
+        <Item data={item[0].steps} title={item[1]} image={item[2]} />
       </Fragment>
     ));
   }
@@ -87,5 +92,5 @@ export default function Listing({
         <div>{newItem}</div>
       </div>
     );
-div  }
+    }
 }
